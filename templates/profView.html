@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} All Profile {% endblock %}
+{% block body %}
+
+<br>
+<br>
+
+        <div class="card" style="width: 18rem;">
+            <img src={{prof.image.url}} class="card-img-top" alt="...">
+                <div class="card-body" >
+                    <h5 class="card-title"> Your Name Is :{{prof.name}}</h5>
+                    <h5 class="card-title"> Your Image Is :{{ prof.image}}</h5>
+                    <h5 class="card-title"> Your Age Is :{{prof.age}}</h5>
+                    <h5 class="card-title"> Your Address Is :{{prof.address}}</h5>
+                    <h5 class="card-title"> Your Phone No Is :{{prof.phone_no}}</h5>
+                    <h5 class="card-title"> Your Birthday Is :{{prof.date_of_birth}}</h5>
+                    <h5 class="card-title"> Your religion Is :{{prof.religion}}</h5>
+                    <h5 class="card-title"> Your gender  Is :{{prof.gender}}</h5>
+                    <a href="{% url 'update' prof.id %}" class="btn btn-primary">Update</a>
+                </div>
+
+        </div>
+
+
+
+
+
+{% endblock %}

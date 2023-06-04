@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} All Profile {% endblock %}
+{% block body %}
+<br>
+<br>
+<div class="container" >
+    {% if messages %}
+        <ul class="messages" style="color: darkred;">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="row" >
+        {% for i in pro %}
+        <div class="card" style="width: 18rem; padding:10px;">
+            <img src={{i.image.url}} class="card-img-top" alt="..." style="height:200px;width:150px; margin:auto; ">
+                <div class="card-body">
+                    <h5 class="card-title">Name:{{i.name}}</h5>
+                    <a href="{% url 'profView' i.id %}" class="btn btn-primary">View Details</a>
+                      <a href="{% url 'deleteProf' i.id %}" class="btn btn-primary">Delete</a>
+                </div>
+
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+<br>
+{% endblock %}
